@@ -20,7 +20,7 @@ function reset() {
 }
 
 function demographictable(id) {
-    d3.json("../../data/samples.json").then((dataset) => {
+    d3.json("data/samples.json").then((dataset) => {
         var sample = dataset.metadata.filter(dataset => dataset.id == id)[0];
         
         Object.entries(sample).forEach(([key, value]) => {
@@ -33,7 +33,7 @@ function demographictable(id) {
 }
 
 function barcharts(id) {
-    d3.json("../../data/samples.json").then((dataset) => {
+    d3.json("data/samples.json").then((dataset) => {
         var sample = dataset.samples.filter(sample => sample.id == id)[0];
         
         var sample_values=sample.sample_values;
@@ -60,7 +60,7 @@ function barcharts(id) {
 }
 
 function bubblechars(id) {
-    d3.json("../../data/samples.json").then((dataset) => {
+    d3.json("data/samples.json").then((dataset) => {
         var sample = dataset.samples.filter(sample => sample.id == id)[0];
         
         var otu_ids=sample.otu_ids;
@@ -86,7 +86,7 @@ function bubblechars(id) {
 }
 
 function gaugechars(id) {
-    d3.json("../../data/samples.json").then((dataset) => {
+    d3.json("data/samples.json").then((dataset) => {
         var sample = dataset.metadata.filter(sample => sample.id == id)[0];
         
         var wfreq=sample.wfreq;
@@ -193,7 +193,7 @@ function gaugechars(id) {
 
 function Init() {
     reset();
-    d3.json("../../data/samples.json").then((data) => {
+    d3.json("data/samples.json").then((data) => {
         //  Create the Traces
         name_list=data.names;
         name_bind=d3.select("#selDataset").selectAll("option").data(name_list);
