@@ -135,7 +135,7 @@ function gaugechars(id) {
             hoverinfo: 'label',
             hole: .5,
             type: 'pie',
-            direction:'clockwise',
+            //direction:'clockwise',
             showlegend: false
         }
 
